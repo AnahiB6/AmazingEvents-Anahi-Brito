@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <title>Amazing Events</title>
+</head>
+
+<body>
+    <header>
+        <img src="./img/Logo Amazing Events.png" width="120" alt="logo del sitio">
+        <nav>
+            <a href="./index.html">Home</a>
+            <a href="#">Upcoming Events</a>
+            <a href="./pastevents.html">Past Events</a>
+            <a href="./contact.html">Contact</a>
+            <a href="./stats.html">Stats</a>
+        </nav>
+    </header>
+    <main>
+        <div id="allban">
+            <div class="carrusel" id="c1">
+                <div class="banners" id="banner1">
+                    <a href="./index.html" class="menu">HOME</a>
+                    <img src="./img/optional_banner_1.jpg" alt="sushi" class="imagban">
+                </div>
+                <div class="flechas">
+                    <a href="#c5"><i class="fa-solid fa-chevron-left"></i></a>
+                    <a href="#c2"><i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="carrusel" id="c2">
+                <div class="banners" id="banner2">
+                    <a href="#" class="menu">UPCOMING EVENTS</a>
+                    <img src="./img/optional_banner_2.jpg" alt="butacascine" class="imagban">
+                </div>
+                <div class="flechas">
+                    <a href="#c1"><i class="fa-solid fa-chevron-left"></i></a>
+                    <a href="#c3"><i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="carrusel" id="c3">
+                <div class="banners" id="banner3">
+                    <a href="./pastevents.html" class="menu">PAST EVENTS</a>
+                    <img src="./img/optional_banner_3.jpg" alt="arquitectura" class="imagban">
+                </div>
+                <div class="flechas">
+                    <a href="#c2"><i class="fa-solid fa-chevron-left"></i></a>
+                    <a href="#c4"><i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="carrusel" id="c4">
+                <div class="banners" id="banner4">
+                    <a href="./contact.html" class="menu">CONTACT</a>
+                    <img src="./img/optional_banner_4.jpg" alt="puntosdecolores" class="imagban">
+                </div>
+                <div class="flechas">
+                    <a href="#c3"><i class="fa-solid fa-chevron-left"></i></a>
+                    <a href="#c5"><i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="carrusel" id="c5">
+                <div class="banners" id="banner5">
+                    <a href="./stats.html" class="menu">STATS</a>
+                    <img src="./img/optional_banner_5.jpg" alt="microfono" class="imagban">
+                </div>
+                <div class="flechas">
+                    <a href="#c4"><i class="fa-solid fa-chevron-left"></i></a>
+                    <a href="#c1"><i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <fieldset class="categoria">
+                <input type="checkbox" name="category" value="category" id="category">
+                <label for="category">Category</label>
+
+                <input type="checkbox" name="category" value="category" id="category">
+                <label for="category">Category</label>
+
+                <input type="checkbox" name="category" value="category" id="category">
+                <label for="category">Category</label>
+
+                <input type="checkbox" name="category" value="category" id="category">
+                <label for="category">Category</label>
+
+                <input type="checkbox" name="category" value="category" id="category">
+                <label for="category">Category</label>
+            </fieldset>
+            <fieldset>
+                <input type="text" name="search" class="buscador">
+                <a href="" class="buscador"> <i class="icon-buscar"></i></a>
+            </fieldset>
+        </section>
+        <section id="cartas">
+            <div class="cart">
+                <img src="./img/Fiesta de disfraces1.jpg" alt="disfraces" width="100%" class="imgcart">
+                <h3>Halloween Nigth</h3>
+                <p>Come in your scariest costume character to win amazing prizes.</p>
+                <div class="priceydat">
+                    <p>Price:12</p>
+                    <a href="./details.html" class="boton">Details</a>
+                </div>
+            </div>
+
+            <div class="cart">
+                <img src="./img/music_concert.jpg" alt="conciertodemusica" width="100%" class="imgcart">
+                <h3>Metallica in Concert</h3>
+                <p>The only concert of the most emblematic band in the world</p>
+                <div class="priceydat">
+                    <p>Price:150</p>
+                    <a href="./details.html" class="boton">Details</a>
+                </div>
+            </div>
+
+            <div class="cart">
+                <img src="./img/cinema.jpg" alt="personasviendounapelicula" width="100%" class="imgcart">
+                <h3>Avengers</h3>
+                <p>Marvel's Avengers 3d premiere the start of an epic saga with your best superheroes</p>
+                <div class="priceydat">
+                    <p>Price:250</p>
+                    <a href="./details.html" class="boton">Details</a>
+                </div>
+            </div>
+
+            <div class="cart">
+                <img src="./img/food_fair.jpg" alt="conciertodemusica" width="100%" class="imgcart">
+                <h3>Festival of the collectivities</h3>
+                <p>Enjoy your favorite dishes from different countries in a unique event for the whole family.</p>
+                <div class="priceydat">
+                    <p>Price:5</p>
+                    <a href="./details.html" class="boton">Details</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div class="redes">
+            <img src="./img/instagram.png" alt="logodeinstagram" width="35px">
+            <img src="./img/facebook.png" alt="logodefacebook" width="35px">
+            <img src="./img/whatsapp.png" alt="logodewhatsapp" width="35px">
+        </div>
+        <h4 class="hfor">COHORT</h4>
+    </footer>
+</body>
+
+</html>
