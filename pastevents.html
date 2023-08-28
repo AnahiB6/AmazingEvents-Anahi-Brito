@@ -3,105 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://file.myfontastic.com/R39xUfZLYf3JRzS3jZLwAe/icons.css">
     <title>Amazing Events</title>
 </head>
 <body>
-    <header> 
-        <img src="./img/Logo Amazing Events.png" width="120" alt="logo del sitio"> 
-        <nav> 
-            <a href="./index.html">Home</a> 
-            <a href="./upcoming.html">Upcoming Events</a> 
-            <a href="#">Past Events</a> 
-            <a href="./contact.html">Contact</a> 
-            <a href="./stats.html">Stats</a> 
-        </nav> 
-    </header> 
-    <main>
-        <div id="allban">
-            <div class="carrusel" id="c1">
-                <div class="banners"  id="banner1">
-                    <a href="./index.html" class="menu">HOME</a>
-                    <img src="./img/optional_banner_1.jpg" alt="sushi" class="imagban">
+    <header>  
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#"><img src="./assets/img/Logo Amazing Events.png" width="120" alt="logo del sitio"></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./upcoming.html">Upcoming Events</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Past Events</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./stats.html">Stats</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-            </div>
-            </div>
+              </nav>
+    </header> 
+    
+    <main>
+        <div>
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href="./index.html" class="menu">HOME</a>
+                    <img src="./assets/img/optional_banner_1.jpg" class="d-block w-100" alt="sushi">
+                  </div>
+                  <div class="carousel-item">
+                    <a href="./index.html" class="menu">HOME</a>
+                    <img src="./assets/img/optional_banner_2.jpg" class="d-block w-100" alt="butacasdecine">
+                  </div>
+                  <div class="carousel-item">
+                    <a href="./index.html" class="menu">HOME</a>
+                    <img src="./assets/img/optional_banner_3.jpg" class="d-block w-100" alt="arquitectura">
+                  </div>
+                  <div class="carousel-item">
+                    <a href="./index.html" style="color: black; text-shadow: none;" class="menu">HOME</a>
+                    <img src="./assets/img/optional_banner_4.jpg" class="d-block w-100" alt="luces">
+                  </div>
+                  <div class="carousel-item">
+                    <a href="./index.html" class="menu">HOME</a>
+                    <img src="./assets/img/optional_banner_5.jpg" class="d-block w-100" alt="microfono">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
         </div>
 
-        <section>
-            <fieldset class="categoria">
-                <input type="checkbox" name="category" value="category"  id="category"> 
-                <label for="category">Category</label>
+            <section class="categoria">
+                <fieldset>
+                    <label class="categoria" for="">
+                        <input type="checkbox" name="foodfair" value="foodfair"  id="foodfair"> 
+                        <label for="foodfair">Food Fair</label>
+                    </label>
+                    <label class="categoria" for="">
+                        <input type="checkbox" name="museum" value="museum"  id="museum"> 
+                        <label for="museum">Museum</label>
+                    </label>
+                    <label class="categoria" for="">
+                        <input type="checkbox" name="costumeparty" value="costumeparty"  id="costumeparty"> 
+                        <label for="costumeparty">Costume Party</label>
+                    </label>
+                    <label class="categoria" for="">
+                        <input type="checkbox" name="musicconcert" value="musicconcert" id="musicconcert"> 
+                        <label for="musicconcert">Music Concert</label>
+                    </label>
+                    <label class="categoria" for="">
+                        <input type="checkbox" name="race" value="race" id="race"> 
+                        <label for="race">Race</label>
+                    </label>
+                </fieldset>
+                
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button id="botonn" class="btn btn-outline-success" style="background-color: #f53896; border-color: black;" type="submit"><a href="" class="buscador"> <i class="icon-buscar"></i></a></button>
+                </form>
+            </section>
 
-                <input type="checkbox" name="category" value="category"  id="category"> 
-                <label for="category">Category</label>
-
-                <input type="checkbox" name="category" value="category"  id="category"> 
-                <label for="category">Category</label>
-
-                <input type="checkbox" name="category" value="category" id="category"> 
-                <label for="category">Category</label>
-
-                <input type="checkbox" name="category" value="category" id="category"> 
-                <label for="category">Category</label>
-            </fieldset>
-            <fieldset>
-                <input type="text" name="search" class="buscador">
-                <a href="" class="buscador"> <i class="icon-buscar"></i></a>
-            </fieldset>
-        </section>
         <section id="cartas">
-                <div class="cart">
-                    <img src="./img/costume_party.jpg" alt="disfraces" width="100%" class="imgcart" >
-                    <h3>Comicon</h3>
-                    <p>For comic lovers, all your favourite characters gathered in one place.</p>
+          <div id="events4">
+            <div class="card" style="width: 18rem;">
+                <img src="./assets/img/costume_party.jpg" class="card-img-top" alt="disfraces">
+                <div class="card-body">
+                    <h5 class="card-title">Comicon</h5>
+                    <p class="card-text">For comic lovers, all your favourite characters gathered in one place.</p>
                     <div class="priceydat">
                         <p>Price:54</p>
-                        <a href="./details.html" class="boton">Details</a>
+                        <a href="./details.html" style="background-color: #f53896; border-color: black;" class="btn btn-primary">Details</a>
                     </div>
                 </div>
+            </div>
+          </div>
 
-                <div class="cart">
-                    <img src="./img/Concierto de musica1.jpg" alt="conciertodemusica" width="100%" class="imgcart">
-                    <h3>Electronic Fest</h3>
-                    <p>The best national and international DJs gathered in one place.</p>
+            <div class="card" style="width: 18rem;">
+                <img src="./assets/img/Concierto de musica1.jpg" class="card-img-top" alt="conciertodemusica">
+                <div class="card-body">
+                    <h5 class="card-title">Electronic Fest</h5>
+                    <p class="card-text">The best national and international DJs gathered in one place.</p>
                     <div class="priceydat">
                         <p>Price:250</p>
-                        <a href="./details.html" class="boton">Details</a>
+                        <a href="./details.html" style="background-color: #f53896; border-color: black;" class="btn btn-primary">Details</a>
                     </div>
                 </div>
-
-                <div class="cart">
-                    <img src="./img/marathon.jpg" alt="personascorriendounamarathon" width="100%" class="imgcart">
-                    <h3>10K for life</h3>
-                    <p>Come and exercise, improve your health and lifestyle.</p>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+                <img src="./assets/img/marathon.jpg" class="card-img-top" alt="personascorriendounamarathon">
+                <div class="card-body">
+                    <h5 class="card-title">10K for life</h5>
+                    <p class="card-text">Come and exercise, improve your health and lifestyle.</p>
                     <div class="priceydat">
                         <p>Price:3</p>
-                        <a href="./details.html" class="boton">Details</a>
+                        <a href="./details.html" style="background-color: #f53896; border-color: black;" class="btn btn-primary">Details</a>
                     </div>
                 </div>
-
-                <div class="cart">
-                    <img src="./img/books.jpg" alt="personasenunabiblioteca" width="100%" class="imgcart">
-                    <h3>Just for your kitchen</h3>
-                    <p>If you're a gastronomy lover come get the cookbook that best suits your taste and your family's.",
-                        "category":"Book Exchange</p>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+                <img src="./assets/img/books.jpg" class="card-img-top" alt="personasenunabiblioteca">
+                <div class="card-body">
+                    <h5 class="card-title">Just for your kitchen</h5>
+                    <p class="card-text">If you're a gastronomy lover come get the cookbook that best suits your taste and your family's.</p>
                     <div class="priceydat">
                         <p>Price:100</p>
-                        <a href="./details.html" class="boton">Details</a>
+                        <a href="./details.html" style="background-color: #f53896; border-color: black;" class="btn btn-primary">Details</a>
                     </div>
                 </div>
-
+            </div>
         </section>
 </main>
 <footer>
-    <div class="redes"> 
-        <img src="./img/instagram.png" alt="logodeinstagram" width="35px">
-        <img src="./img/facebook.png" alt="logodefacebook" width="35px">
-        <img src="./img/whatsapp.png" alt="logodewhatsapp" width="35px">
+    <div class="redes">
+        <a href=""><img src="./assets/img/instagram.png" alt="logodeinstagram" width="35px"></a>
+        <a href=""><img src="./assets/img/facebook.png" alt="logodefacebook" width="35px"></a>
+        <a href=""><img src="./assets/img/whatsapp.png" alt="logodewhatsapp" width="35px"></a>
     </div>
     <h4 class="hfor">COHORT</h4>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="./assets/js/data.js"></script>
+<script src="./assets/js/pastevents.js"></script>
 </body>
 </html>
