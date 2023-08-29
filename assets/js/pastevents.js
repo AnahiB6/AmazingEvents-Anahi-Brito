@@ -16,3 +16,6 @@ for(let event of eventos) {
 };
 }
 cartas.innerHTML = cards;
+
+
+
