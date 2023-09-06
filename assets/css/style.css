@@ -5,9 +5,16 @@ padding: 0px;
 box-sizing: border-box;
 font-family: Arial, Helvetica, sans-serif;
 }
-body {
+html,body {
 background-color: #fbc7e1 !important ;
-min-height: 100vh;
+height: 100%;
+}
+body {
+display: flex;
+flex-direction: column;
+}
+main {
+flex-grow: 1;
 }
 .imagban {
 width: 100%;
@@ -15,7 +22,9 @@ height: 100%;
 object-fit: cover;
 object-position:center;
 }
-
+.navbar-expand-lg {
+background-color:#80c33bcf;
+}
 .menu {
 position: absolute;
 top: 50%;
@@ -27,19 +36,18 @@ text-decoration: none;
 font-size: 50px;
 text-shadow: 2px 2px 0px black, 2px -2px 0px black, -2px 2px 0px black, -2px -2px 0px black;
 }
-section {
+#cktion {
 padding: 15px;
 font-size: 13px;
 display: flex;
-flex-direction: row;
+flex-direction: column;
 justify-content: space-between;
 }
-section.categoria {
+div.categoria {
 display: flex;
 flex-direction: column;
 gap: 20px;
 }
-
 .buscador {
 text-decoration: none;
 color: black;
@@ -67,7 +75,9 @@ display: flex;
 flex-direction: column;
 gap:15px;
 position: relative;
-right: 7px;
+margin-left: 7px;
+bottom: 15px;
+padding-top: 15px;
 }
 .priceydat {
 display: flex;
@@ -80,7 +90,7 @@ margin-top: 15px;
 footer {
 padding-top: 25px;
 padding-bottom: 25px;
-background-color:black;
+background-color:#c33b80;
 background-size: contain;
 width: 100%;
 display: inline-flex;
@@ -96,7 +106,7 @@ display: flex;
 align-items: center;
 position: relative;
 left: 80px;
-color: #fddfee;
+color: #ede8eb;
 }
 /* // CARTA DETAILS// */
 .card-text {
@@ -106,10 +116,8 @@ margin-bottom: 0px !important;
 margin-left: 10px !important;
 margin-right: 10px !important;
 margin-top: 15px !important;
-
 }
 /* //-----// */
-
 #contacto {
 background-color:rgba(176, 224, 127, 0.581) !important;
 }
@@ -126,20 +134,31 @@ border: 2px solid black;
 position: relative !important;
 text-align: initial !important;
 }
-
+.all {
+position: relative;
+right: 7px;
+}
 .carousel-item img {
 height: 250px;
 object-fit: cover;
 }
 
 @media only screen and (min-width: 700px) {
-section.categoria {
-flex-direction: row;
+div.categoria {
 align-items: center;
-}
-#cartas {
 display: flex;
 flex-direction: row;
+justify-content: space-between;
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 5px;
+}
+#cktion {
+flex-direction: row;
+}
+#cartas {
+flex-direction: row;
+flex-wrap: wrap;
 justify-content:space-around;
 margin-bottom: 20px;
 margin-left: 20px;
@@ -156,6 +175,7 @@ text-align: start;
 max-width: 60%;
 left: 250px !important;
 bottom: 10px;
+top: 1px;
 }
 #detalles {
 height: 100% !important;
@@ -164,8 +184,18 @@ padding-bottom: 10px !important;
 margin-top: 35px;
 }
 .navbar-collapse {
-flex-grow: 0;
+flex-grow: 0 !important;
 }
-
+.navbar-nav {
+gap: 5px;
+}
+li.nav-item {
+border: ridge;
+border-radius: 10px;
+border-color: rgb(196 239 152 / 58%);
+}
+li.nav-item:hover {
+background-color: #fbc7e1;
+}
 
 }
