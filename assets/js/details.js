@@ -33,26 +33,6 @@
 // }
 
 const contenedorCartas = document.getElementById('krtasdet');
-const cartasDetalles = eventos.filter(cart => cart)
-
-
-const mostrasCartasDeta = cartasDetalles.map(cart => {
-    let info = {};
-    info.id = cart._id;
-    info.name = cart.name;
-    info.image = cart.image;
-    info.date = cart.date;
-    info.description = cart.description;
-    info.category = cart.category;
-    info.place = cart.place;
-    info.capacity = cart.capacity;
-    info.assistance = cart.assistance;
-    info.price = cart.price;
-
-    return info;
-})
-
-console.log(mostrasCartasDeta);
 
 
 const quearySearch = document.location.search;
@@ -60,18 +40,30 @@ const id = new URLSearchParams(quearySearch).get("id");
 console.log(id);
 
 
-function crearCarta(cart, contenedorCartas) {
-    const {_id, name, image, date, description, category, place, capacity, assistance, price } = cart;
+const cart = eventos.find(cart => cart._id === id);
+console.log(cart)
 
-    contenedorCartas.innerHTML = ` <div class="card-body">
-    <h5 id="detalle" class="card-title"><strong>${_id}</strong></h5>
-    <p id="nombre" class="card-text">${name}</p>
-    <p id="fecha" class="card-text">${image}</p>
-    <p id="descripcion" class="card-text">${date}</p>
-    <p id="categoria" class="card-text">${description}</p>
-    <p id="lugar" class="card-text">${place}</p>
-    <p id="capacidad" class="card-text">${capacity}</p>
-    <p id="asistencia" class="card-text">${assistance}</p>
-    <p id="precio" class="card-text">${price}</p>
-    </div>`
+function crearCarta(cart, contenedorCartas) {
+    const { image, _id, name, date, description, category, place, capacity, assistance, price } = cart;
+
+    contenedorCartas.innerHTML = `<div class="card d mb-3">
+  <div class="row g-0">
+      <div class="col-md-4"  id="detalles">
+          <img src="${image}" class="img-fluid rounded-start w-100" alt="dinosaurio">
+      </div>
+    <div class="col-md-8">
+      <div class="card-body">
+          <h5 id="detalle" class="card-title"><strong>${name}</strong></h5>
+          <p id="fecha" class="card-text">${date}</p>
+          <p id="descripcion" class="card-text">${description}</p>
+          <p id="categoria" class="card-text">${category}</p>
+          <p id="lugar" class="card-text">${place}</p>
+          <p id="capacidad" class="card-text">${capacity}</p>
+          <p id="asistencia" class="card-text">${assistance}</p>
+          <p id="precio" class="card-text">${price}</p>
+      </div>
+    </div>
+  </div> `
 }
+
+const cardd = crearCarta(cart, contenedorCartas);
