@@ -24,7 +24,7 @@ for(let i=0; i<eventos.length; ++i) {
             <p class="card-text">${event.description}</p>
             <div class="priceydat">
                 <p>${event.price}</p>
-                <a href="./details.html" style="background-color: #f53896; border-color: black;" class="btn btn-primary">Details</a>
+                <a href="./details.html?id=${event._id}" style="background-color: #f53896; border-color: black;" class="btn btn-primary">Details</a>
             </div>
         </div>
         </div>`;
