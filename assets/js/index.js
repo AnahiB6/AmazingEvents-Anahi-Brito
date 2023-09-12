@@ -58,6 +58,11 @@ inputbtn.addEventListener('input', function(){
         console.log(coincidencia);
 filtro = textoIngresado
 krtas()
+
+// if(textoIngresado != event.name){
+//     alert('Try again')
+// }
+
 });
 
 

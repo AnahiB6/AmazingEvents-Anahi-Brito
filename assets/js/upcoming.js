@@ -2,7 +2,7 @@
 let cartas = document.getElementById ('cartas');
 let filtro = ""
 let categorias = []
-
+// 23-03-10
 function krtas () {
 let cards = "";
 for(let i=0; i<eventos.length; ++i) {
