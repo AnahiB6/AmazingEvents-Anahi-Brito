@@ -107,7 +107,4 @@ inputButton.addEventListener('input', e => {
     console.log(coincidencia);
     filtro = textoIngresado;
     filterCards();
-    // if(textoIngresado != event.name){
-    //     alert('Try again')
-    // }
 });
