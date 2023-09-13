@@ -18,14 +18,14 @@ function traerData() {
 function createCard(evento, contenedorCartas) {
     const { image, _id, name, date, description, category, place, capacity, assistance, price, estimate } = evento;
 
-    let estimateHtml = '';
+    let estimado = '';
 
     if(estimate) {
-      estimateHtml = `<p id="asistencia" class="card-text">Estimate: ${estimate}</p>`;
+      estimado = `<p id="asistencia" class="card-text">Estimate: ${estimate}</p>`;
     } else {
-      estimateHtml = `<p id="asistencia" class="card-text">Assistance: ${assistance}</p>`;
+      estimado = `<p id="asistencia" class="card-text">Assistance: ${assistance}</p>`;
     }
-    console.log(estimateHtml);
+    console.log(estimado);
 
     contenedorCartas.innerHTML = `<div class="card d mb-3">
       <div class="row g-0">
@@ -40,7 +40,7 @@ function createCard(evento, contenedorCartas) {
             <p id="categoria" class="card-text">Category: ${category}</p>
             <p id="lugar" class="card-text">Place: ${place}</p>
             <p id="capacidad" class="card-text">Capacity: ${capacity}</p>
-            ${estimateHtml}
+            ${estimado}
             <p id="precio" class="card-text">Price: ${price}</p>
         </div>
       </div>

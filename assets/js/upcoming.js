@@ -38,7 +38,7 @@ function traerData() {
         if(array.length > 0) {
             array.forEach(evento => html += createCard(evento));
         } else {
-            html += `<div class="text-center mt-5 h5">No se encontraron eventos.</div>`;
+            html += `<div class="text-center mt-5 h5">No events found</div>`;
         }
         contenedor.innerHTML = html;
     }

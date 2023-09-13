@@ -61,7 +61,7 @@ categorias.forEach(categoria =>{
             if(eventos[i].assistance == undefined) ingresos += eventos[i].price * eventos[i].estimate;
                 else ingresos += eventos[i].price * eventos[i].assistance;}
             }
-            return  (ingresos != 0) ? ingresos : "No hay eventos";
+            return  (ingresos != 0) ? ingresos : "There arent events";
     }
 
     function calcularPorcentajeporCategoria(categoria,validacion){
@@ -74,7 +74,7 @@ categorias.forEach(categoria =>{
             if(eventos[i].assistance == undefined) asistencia += eventos[i].estimate;
                 else asistencia += eventos[i].assistance;}
             }
-            return (capacidad != 0) ? (asistencia * 100 / capacidad).toFixed(2).concat("%"): "No hay eventos";
+            return (capacidad != 0) ? (asistencia * 100 / capacidad).toFixed(2).concat("%"): "There arent events";
     }
 
         function calcularPorcentaje(evento){
