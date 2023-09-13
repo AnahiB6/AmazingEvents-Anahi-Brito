@@ -63,19 +63,26 @@ function createAllCards(array, contenedor) {
     contenedor.innerHTML = html;
 }
 
+
 function createCard(evento){
     return `<div class="card" style="width: 18rem;">
-    <img src="${evento.image}" class="card-img-top" alt="${evento.name}">
+    <img src="${evento.image}" class="card-img-top" style="height:12rem;" alt="${evento.name}">
     <div class="card-body">
-        <h5 class="card-title">${evento.name}</h5>
-        <p class="card-text">${evento.description}</p>
-        <div class="priceydat">
-            <p>${evento.price}</p>
-            <a href="./details.html?id=${evento._id}" style="background-color: #f53896; border-color: black;" class="btn btn-primary">Details</a>
+        <div class="h-100 d-flex flex-column justify-content-between">
+            <div>
+                <h5 class="card-title">${evento.name}</h5>
+                <p class="card-text"><small>${evento.description}</small></p>
+            </div>
+            <div class="mt-4 d-flex justify-content-between align-items-center">
+                <p class="text-center text-muted my-auto"><small>Price: $${parseFloat(evento.price)}</small></p>
+                <a href="./details.html?id=${evento._id}" style="background-color: #f53896; border-color: black;" class="btn btn-primary">Details</a>
+            </div>
         </div>
     </div>
     </div>`;
 }
+
+
 
 function createAllCheckboxes(array, contenedor) {
     let html = '';
