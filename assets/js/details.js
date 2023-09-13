@@ -3,9 +3,9 @@ const contenedorCartas = document.getElementById('krtasdet');
 const quearySearch = document.location.search;
 const id = new URLSearchParams(quearySearch).get("id");
 
-init();
+traerData();
 
-function init() {
+function traerData() {
     fetch('https://mindhub-xj03.onrender.com/api/amazing')
     .then(response => response.json())
     .then(data => {

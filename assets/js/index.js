@@ -9,9 +9,9 @@ const contenedorCartas = document.getElementById('cartas')
 const contenedorCheckboxes = document.getElementById('ckbox')
 const inputButton = document.getElementById('inputbuscador');
 
-init();
+traerData();
 
-function init() {
+function traerData() {
     fetch('https://mindhub-xj03.onrender.com/api/amazing')
     .then(response => response.json())
     .then(data=>{
