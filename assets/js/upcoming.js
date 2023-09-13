@@ -1,106 +1,94 @@
+let eventos = [];
+let data = [];
+let categorias = [];
 
-let cartas = document.getElementById ('cartas');
-let filtro = ""
-let categorias = []
-// 23-03-10
-function krtas () {
-let cards = "";
-for(let i=0; i<eventos.length; ++i) {
-    let event = eventos[i];
-    if(event.date > "2023-01-01") {    
-        if(filtro !== "") {
-            if(!event.name.toLowerCase().includes(filtro)) {
-                continue;
+let filtro = "";
+let seleccionados = [];
+
+const contenedorCartas = document.getElementById('cartas')
+const contenedorCheckboxes = document.getElementById('ckbox')
+const inputButton = document.getElementById('inputbuscador');
+
+init();
+
+function init() {
+    fetch('https://mindhub-xj03.onrender.com/api/amazing')
+    .then(response => response.json())
+    .then(data => {
+        for (let i = 0; i<data.events.length; i++) {
+            if(!categorias.includes(data.events[i].category)) {
+                categorias.push(data.events[i].category);
             }
         }
-        if(categorias.length > 0) {
-            if(!categorias.includes(event.category)) {
-                continue;
+        console.log(categorias);
+        createAllCheckboxes(categorias, contenedorCheckboxes);
+
+        data.events.forEach((event) => {
+            if(event.date > "2023-03-10") {
+                eventos.push(event);
             }
+        });
+        console.log(eventos);
+        createAllCards(eventos, contenedorCartas);
+    });
+}
+
+    function createAllCards(array, contenedor) {
+        let html = '';
+        if(array.length > 0) {
+            array.forEach(evento => html += createCard(evento));
+        } else {
+            html += `<div class="text-center mt-5 h5">No se encontraron eventos.</div>`;
         }
-        let card =`<div class="card" style="width: 18rem;">
-        <img src="${event.image}" class="card-img-top" alt="${event.name}">
-        <div class="card-body">
-            <h5 class="card-title">${event.name}</h5>
-            <p class="card-text">${event.description}</p>
-            <div class="priceydat">
-                <p>${event.price}</p>
-                <a href="./details.html?id=${event._id}" style="background-color: #f53896; border-color: black;" class="btn btn-primary">Details</a>
-            </div>
+        contenedor.innerHTML = html;
+    }
+
+function createCard(evento){
+    return `<div class="card" style="width: 18rem;">
+    <img src="${evento.image}" class="card-img-top" alt="${evento.name}">
+    <div class="card-body">
+        <h5 class="card-title">${evento.name}</h5>
+        <p class="card-text">${evento.description}</p>
+        <div class="priceydat">
+            <p>${evento.price}</p>
+            <a href="./details.html?id=${evento._id}" style="background-color: #f53896; border-color: black;" class="btn btn-primary">Details</a>
         </div>
-        </div>`;
-        cards += card;
-    };
-}
-cartas.innerHTML = cards;
+    </div>
+    </div>`;
 }
 
-krtas()
-
-
-
-
-
-//Buscador
-const inputbtn = document.getElementById('inputbuscador');
-
-
-document.addEventListener('input', e => {
-    if(e.target.className == "ckinput"){
-        if(e.target.checked)categorias.push(e.target.value)
-        else categorias.pop(e.target.value)
-    krtas()
-    }
-console.log(categorias);
-})
-
-inputbtn.addEventListener('input', function(){
-    const textoIngresado = inputbtn.value.toLowerCase();
-        const coincidencia = eventos.filter(event => event.name.toLowerCase().includes(textoIngresado));
-        console.log(coincidencia);
-filtro = textoIngresado
-krtas()
-});
-
-
-
-
-//forma2- checkboxs
-
-let contenedor = document.getElementById('ckbox');
-
-
-function existe (array, data) {
-    var result = false;
-    for(let i=0; i<array.length; ++i) {
-        if(array[i] === data) {
-            result = true;
-        }
-    }
-    return result;
-}
-
-function mostrarCartas(array, contenedor){
-    var tmp = []
-    array.forEach((item) => {
-        if(!existe(tmp, item.category)) {
-            tmp.push(item.category);
-        }
-    });
-    console.log(tmp);
-    console.log(array);
-
-    let html=""
-    tmp.forEach(event => {
-        let checked = "";
-        let clases = "";
-        html += `<label class="categoria ck${clases}">
-        <input class="ckinput" type="checkbox" name="${event}" value="${event}"  id="${event}"${checked}> 
-        <span>${event}</span>
-    </label>`;
-    });
+function createAllCheckboxes(array, contenedor) {
+    let html = '';
+    array.forEach(categoria => html += createCheckbox(categoria));
     contenedor.innerHTML = html;
 }
 
-mostrarCartas(eventos, contenedor);
+function createCheckbox(categoria) {
+    let checked = "";
+    let clases = "";
+    return `<label class="categoria ck${clases}">
+    <input class="ckinput" type="checkbox" name="${categoria}" value="${categoria}"  id="${categoria}"${checked}> 
+    <span>${categoria}</span>
+    </label>`;
+}
 
+document.addEventListener('input', e => {
+    if(e.target.className == "ckinput") {
+        if(e.target.checked) {
+            seleccionados.push(e.target.value);
+        }
+        else {
+            seleccionados.pop(e.target.value);
+        }
+        filterCards();
+    }
+    console.log(seleccionados);
+});
+
+inputButton.addEventListener('input', e => {
+    const textoIngresado = e.target.value.toLowerCase();
+    const coincidencia = eventos.filter(event => event.name.toLowerCase().includes(textoIngresado));
+    console.log(coincidencia);
+    filtro = textoIngresado;
+    filterCards();
+});
